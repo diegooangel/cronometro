@@ -16,14 +16,22 @@ const ticktack = () => {
         }
     }
 }
-
 const agregar = () => {
     ticktack();
     $h2.textContent = `${horas}:${minutos}:${segundos}`
     tiempo();
 }
 const tiempo = () => {
-    setTimeout(() => {
+    t = setTimeout(() => {
         agregar();
     }, 1000);
+}
+const detener = () => {
+    clearTimeout(t);
+}
+const reiniciar = () => {
+    segundos = 0;
+    minutos = 0;
+    horas = 0;
+    $h2.textContent = `00:00:00`
 }
